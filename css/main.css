@@ -1,0 +1,390 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Book Antiqua;
+}
+
+body{
+    width:-webkit-fill-available;
+}
+
+/*Spinner Start*/
+#spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    left:50%;
+    top:50%;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+.spinner-border{
+    color: blue;
+    width: 3rem; 
+    height: 3rem;
+    display: inline-block;
+    vertical-align: -0.125em;
+    border:0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: .75s linear infinite spinner-border;
+}
+.spin-circle{
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    position: absolute;
+    width:1px;
+    
+}
+
+@keyframes spinner-border {
+    to{transform:rotate(360deg)}
+}
+
+
+/*Navigation Bar Start*/
+#nav-space{
+    display: grid; 
+    position: static; 
+    z-index: 10; 
+    width: -webkit-fill-available;
+}
+
+.Quick-nav-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(0 152 173);
+    width: -webkit-fill-available;
+    height: fit-content;
+    padding: 1.3% 5% 1.3% 1.3%;
+    color: white;
+}
+
+.Quick-nav-links a{
+    color: white;
+    text-decoration: none;
+}
+
+#nav-space .Quick-nav-links .Timings{
+    display: grid;
+    max-width: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-space .Quick-nav-links .call a{
+    background-color: darkviolet;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 black;
+    padding: 10px 20px 10px 20px;
+}
+
+/*Support Links*/
+#insta {
+    display: grid;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 8px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+}
+.support{
+    z-index: 10;
+    display: flex;
+    position: fixed;
+    top:50vh;
+    padding: 10px;
+    background-color: rgb(0, 90, 224);
+    color: white;
+    text-decoration: none;
+    font-size: 2vw;
+    right: 20px;
+    width: 4vh;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 0 rgb(0,0,0);
+    transition: 0.5s;
+    height: 4vh;
+}
+
+.support p{
+    overflow-x:hidden ;
+    visibility: hidden;
+    opacity: 0;
+}
+.support:hover{
+    box-shadow: 0 0 12px 0 rgb(0,0,0);
+    width: max-content;
+}
+.support:hover .fa-envelope{
+    margin: 8px;
+}
+.support:hover p{
+    overflow-x: visible;
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position:sticky;
+    background-color: #ffffff;
+    height: max-content;
+    width: -webkit-fill-available;
+    padding: 0 8vw 0 3vw;
+    transition: 0.8s;
+}
+.shadow-sm{
+    box-shadow: 0 0.135rem 0.26rem rgba(0,0,0,0.075);
+    position: fixed;
+    min-height: max-content;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.logo{
+    background:url(../images/logo.png) no-repeat center;
+    background-size: 110%;
+    height: 100px;
+    width: 300px;
+}
+
+.nav-bar .nav-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Montserrat",sans-serif;
+    margin-left: 10%;
+
+}
+
+.nav-bar .nav-content a{
+    text-decoration: none;
+    margin: 12px 10px 12px 0px;
+    padding: 13px 25px 13px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    color: black;
+    height: 100%;
+}
+
+.nav-bar .nav-content .Enroll{
+    font-size: larger;
+    padding: 10px 20px 10px 20px;
+    margin: 12px 10px 12px 0px;
+    font-weight: 900;
+    color: white;
+    background-color: #285AEB;
+}
+.nav-bar .nav-content .Enroll:hover{
+    box-shadow: 0 0 4px 0 black;
+    background-color: #3869ff;
+}
+/* .fa-hand-point-up{
+    position: absolute;
+    font-size: 25px;
+    transform: rotate(45deg);
+    color: darkturquoise;
+    bottom: 25px;
+    left: revert; 
+    right: 17.9% ;
+} */
+.fas{
+    color: black;
+}
+/*Navigation Bar End*/
+
+
+/* Page Top Start*/
+#Page-top{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 65vh;
+    width: -webkit-fill-available;
+    background: url(../images/page-top.jpg) no-repeat center;
+    background-size: 100%;
+    height: 65vh;
+}
+
+.landing-page{
+    position: absolute;
+    left: 14%;
+    height: 50%;
+    background-color: rgba(130,0,177,0.5);
+    padding: 20px;
+    width: 22.3%;
+}
+.content-card{
+    background-color: rgba(130,0,177,0.8);
+    color: white;
+    height: 100%;
+}
+.Register{
+    position: absolute;
+    bottom: 50px;
+    left: 35px;
+    font-weight: 900;
+    padding: 5px 15px 5px 15px;
+    background-color: coral;
+    border-color: aquamarine;
+    border-radius: 0 15px 0 15px;
+}
+/*Page Top End*/
+
+
+/*About Start*/
+#About{
+    margin-top: 150px;
+    padding-top:150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80vh;
+    width: -webkit-fill-available;
+    background: url(../images/logo.png) no-repeat center;
+    background-size: 100%;
+}
+.About-Container{
+    background-color: rgb(0 107 177 / 40%);
+    position: relative;
+    right: 10%;
+    height: 80%;
+    padding: 20px;
+    width: 30%;
+}
+.About-card{
+    background-color: rgb(0 56 110 / 65%);
+    color: white;
+    padding: 20px;
+    height: -webkit-fill-available;
+}
+.About-card .learn-more{
+    position: absolute;
+    left: 30px;
+    bottom: 35px;
+    color: black;
+    text-decoration: none;
+    padding: 5px 15px 5px 15px;
+    background-color: #fdf497;
+    border-radius: 20px 0px 20px 0px;
+}
+/*About End*/
+
+/*Cources Start*/
+#Cources{
+    margin-top: 150px;
+    padding-top:200px;
+    height: 85vh;
+    width: -webkit-fill-available;
+    background-image: radial-gradient(circle, rgba(0,0,0,0)30%, yellow, orange);
+    /* background-attachment: fixed; */
+}
+#Cources .cources-content{
+    background: url(../images/cource-bg.png) no-repeat center;
+    background-size: 100%;
+    /* background-attachment: fixed; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: -webkit-fill-available;
+}
+#Cources .cources-content .cource-heading{
+    width: fit-content;
+    margin:5vh 0 2vh 0;
+}
+#Cources .cources-content .cource-heading h1{
+    font-size: 30px;
+    font-weight: 900;
+    color: rgb(255, 0, 0);
+}
+#Cources .cources-content .cources-container{
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 33vh;
+    margin: 0 22vw 0 22vw;
+}
+#Cources .cources-content .cources-container .card{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 65%;
+    width: 10vw;
+    background-color: rgba(124, 176, 255,0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px 2px rgba(255, 136, 0,0.75);
+    border-radius: 10px;
+}
+#Cources .cources-content .cources-container .card img{
+    background-color: #ffffff;
+}
+#Cources .cources-content .cources-container .card .know-more{
+    margin-top: 3vh;
+    font-size: 15px;
+    font-weight: 900;
+    text-decoration: none;
+    padding: 10px 20px 10px 10px;
+    border-radius: 50px;
+    background-color: rgb(0, 89, 255);
+    color: white;
+}
+/*Cources End*/
+
+/*Faculty Start*/
+#Faculty{
+    margin-top: 150px;
+    padding-top:200px;
+    height: 85vh;
+    width: -webkit-fill-available;
+    background: url(../images) no-repeat center;
+    background-size: 70%;
+}
+#Faculty .faculty-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+}
+/*Faculty End*/
+
+/*footer Start*/
+.footer{
+    background-color: rgb(0, 54, 104);
+    height: 50vh;
+    color: #ffffff;
+}
+.footer .f-content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2vh;
+}
+.footer .f-content .quick-links{
+    border-right: 3px solid white;
+    height: 500px;
+}
+.footer .f-content .f-card{
+    width: 30vw;
+    height: 40vh;
+    margin-left: 2vw;
+}
